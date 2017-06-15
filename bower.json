@@ -1,0 +1,32 @@
+{
+  "name": "date-time-picker",
+  "description": "Provides a responsive interface to pick a date and/or time.",
+  "main": "index.html",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "date-picker",
+    "time-picker",
+    "date-time-picker"
+  ],
+  "authors": [
+    "Christopher Hou"
+  ],
+  "license": "MIT",
+  "homepage": "christopher-hou.github.io/date-time-picker",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-elements": "PolymerElements/iron-elements#^1.0.10",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7",
+    "shadycss": "webcomponents/shadycss#^v1.0.0",
+    "vaadin-icons": "^4.1.0"
+  }
+}

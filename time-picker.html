@@ -1,0 +1,66 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="elements.html">
+
+<dom-module id="time-picker">
+  <style include="iron-flex" is="custom-style">
+    :root {
+      --paper-input-container-color: gray;
+      --paper-input-container-focus-color: blue;
+      --paper-input-container-input: {
+        font-weight: bold;
+        font-family: garamond;
+        font-size: 300%;
+        width: 80px;
+        color: blue;
+      };
+    }
+    *:focus {
+      outline: 0;
+      outline: none;
+    }
+    paper-button {
+      min-width: 0;
+    }
+  </style>
+  <template>
+    <div>
+      <div class="layout horizontal">
+        <paper-icon-button id="hourUp" icon="hardware:keyboard-arrow-up" style="margin-left:auto"></paper-icon-button>
+        <div style="width:5em"></div>
+        <paper-icon-button id="minuteUp" icon="hardware:keyboard-arrow-up"></paper-icon-button>
+        <div style="width:5em"></div>
+        <paper-icon-button id="secondUp" icon="hardware:keyboard-arrow-up"></paper-icon-button>
+        <div style="width:5em"></div>
+        <paper-icon-button id="ampmUp" icon="hardware:keyboard-arrow-up" style="margin-right:auto"></paper-icon-button>
+      </div>
+      <paper-listbox style="background-color:#DEDEDE">
+        <template is="dom-bind" id="tmpl2">
+          <div class="layout horizontal">
+            <paper-input style="margin-left:auto" id="hour" auto-validate pattern="[2-9]|1[0-2]?" allowed-pattern="[0-9]" value="{{hour}}"></paper-input>
+            <paper-item disabled id="blink" style="font-weight:bold;font-size:300%;color:blue">:</paper-item>
+            <paper-input id="minute" auto-validate pattern="[0-5]?[0-9]" allowed-pattern="[0-9]" value="{{minute}}"></paper-input>
+            <paper-item disabled id="blink2" style="font-weight:bold;font-size:300%;color:blue">:</paper-item>
+            <paper-input id="second" auto-validate pattern="[0-5]?[0-9]" allowed-pattern="[0-9]" value="{{second}}"></paper-input>
+            <paper-button id="ampm" style="width:2.25em;padding:0;margin-right:auto;font-weight:bold;font-size:300%;color:white;background-color:blue;font-family:garamond">{{ampm}}</paper-button>
+          </div>
+        </template>
+        <script src="time-picker.js"></script>
+      </paper-listbox>
+      <div class="layout horizontal">
+        <paper-icon-button id="hourDown" icon="hardware:keyboard-arrow-down" style="margin-left:auto"></paper-icon-button>
+        <div style="width:5em"></div>
+        <paper-icon-button id="minuteDown" icon="hardware:keyboard-arrow-down"></paper-icon-button>
+        <div style="width:5em"></div>
+        <paper-icon-button id="secondDown" icon="hardware:keyboard-arrow-down"></paper-icon-button>
+        <div style="width:5em"></div>
+        <paper-icon-button id="ampmDown" icon="hardware:keyboard-arrow-down" style="margin-right:auto"></paper-icon-button>
+      </div>
+    </div>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'time-picker'
+  });
+</script>

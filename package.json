@@ -1,0 +1,23 @@
+{
+  "name": "date-time-picker",
+  "version": "1.0.0",
+  "description": "Provides a responsive interface to pick a date and/or time.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christopher-hou/date-time-picker/"
+  },
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "date-picker",
+    "time-picker",
+    "date-time-picker"
+  ],
+  "author": "Christopher Hou",
+  "license": "MIT"
+}

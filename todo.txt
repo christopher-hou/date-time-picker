@@ -1,0 +1,3 @@
+-Compatability with phone/all browsers (try running it on actual website - github/freehostia?)
+-Fix directories (instead of just accessing bower_components)
+-Page doesn't load all the way when switching tabs

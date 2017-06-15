@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Date and Time Picker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="elements.html">
+    <link rel="import" href="date-picker.html">
+    <link rel="import" href="time-picker.html">
+    <link rel="icon" href="datetime.png">
+    <style is="custom-style" include="iron-flex iron-flex-alignment">
+      body {
+      
+      }
+      [main] {
+        background-color: #DEDEDE;
+      }
+      [drawer] {
+        background-color: #FFFFFF;
+      }
+      paper-menu {
+        color: lightgrey;
+      }
+      paper-item {
+        font-family: garamond;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      paper-input-container {
+        font-family: garamond;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body onload="clickDate()">
+    <script>
+      function clickDate()
+      {
+        var date = document.getElementById('date');
+        date.click();
+      }
+    </script>
+    <paper-drawer-panel id="drawerPanel" style="background-color:rgba(0,0,0,0.7)" force-narrow>
+      <paper-header-panel drawer style="background-color:inherit;width:inherit">
+        <paper-icon-button id="close" icon="close" style="color:lightgrey;float:right;width:100px;height:100px"></paper-icon-button>
+        <paper-menu style="background-color:inherit;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+          <paper-item id="date" style="width:150px;height:150px">
+            <iron-icon icon="vaadin:clock" style="width:100px;height:100px"></iron-icon>
+          </paper-item>
+          <paper-item id="time" style="width:150px;height:150px">
+            <iron-icon icon="vaadin:calendar" style="width:100px;height:100px"></iron-icon>
+          </paper-item>
+          <paper-item id="date-time" style="width:150px;height:150px">
+            <iron-icon icon="vaadin:calendar-clock" style="width:100px;height:100px"></iron-icon>
+          </paper-item>
+        </paper-menu>
+      </paper-header-panel>
+      <paper-header-panel main>
+        <paper-toolbar>
+          <paper-icon-button id="menu" icon="menu"></paper-icon-button>
+          <div style="font-size:250%;font-family:garamond;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)" >Date and Time Picker</div>
+        </paper-toolbar>
+        <div style="text-align:center">
+          <date-picker id="date-picker"></date-picker>
+          <time-picker id="time-picker"></time-picker>
+          <paper-icon-button id="reset" style="width:50px;height:50px" icon="home"></paper-icon-button>
+          <br>
+          <br>
+          <div class="layout horizontal">
+            <paper-item id="displaydate" disabled style="font-weight:bold;font-size:300%;color:blue;margin:auto"></paper-item>
+            <paper-item id="displaytime" disabled style="font-weight:bold;font-size:300%;color:blue;margin:auto"></paper-item>
+          </div>  
+        </div>
+        <script src="app.js"></script>
+      </paper-header-panel>
+    </paper-drawer-panel>
+  </body>
+</html>

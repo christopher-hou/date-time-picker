@@ -1,0 +1,33 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="elements.html">
+
+<dom-module id="date-picker">
+  <style include="iron-flex">
+    *:focus {
+      outline: 0;
+      outline: none;
+    }
+  </style>
+  <template>
+    <div>
+      <template is="dom-bind" id="tmpl">
+        <div class="layout horizontal">
+          <paper-icon-button id="left" icon="hardware:keyboard-arrow-left" style="margin-left:auto"></paper-icon-button>
+          <div id="monthyear" style="display:none">{{mm}} {{yy}}</div>
+          <paper-item id="description" style="font-weight:bold;width:400px;color:blue;font-family:garamond;display:flex;align-items:center;justify-content:center">{{desc}}</paper-item>
+          <paper-icon-button id="right" icon="hardware:keyboard-arrow-right" style="margin-right:auto"></paper-icon-button>
+        </div>
+      </template>
+      <paper-listbox style="background-color:#DEDEDE">
+        <div id="calendar"></div>
+        <script src="date-picker.js"></script>
+      </paper-listbox>
+    </div>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'date-picker'
+  });
+</script>
